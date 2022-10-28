@@ -10,12 +10,12 @@ class PageTwo extends StatefulWidget {
 class _PageTwoState extends State<PageTwo> {
   final nameEditingController = TextEditingController();
   final emailEditingController = TextEditingController();
-  final phoneEditingController = TextEditingController();
+  TextEditingController phoneEditingController = TextEditingController(text: '+63');
   final birthdateEditingController = TextEditingController();
   final ageEditingController = TextEditingController();
   final sectionEditingController = TextEditingController();
   final courseEditingController = TextEditingController();
-  final fbEditingController = TextEditingController();
+  TextEditingController fbEditingController = TextEditingController(text: 'https://www.');
 
   final formKey = GlobalKey<FormState>();
 
