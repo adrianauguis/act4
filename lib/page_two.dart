@@ -186,8 +186,7 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')));
+
                         List data = <Map<String, dynamic>>[
                           {
                             'name': nameEditingController.text,

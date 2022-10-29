@@ -8,6 +8,7 @@ class PageOne extends StatefulWidget {
 }
 
 class _PageOneState extends State<PageOne> {
+  //two global list variables used to receive data from other page/route
   List receiver = [];
   List student = [];
 
@@ -55,6 +56,7 @@ class _PageOneState extends State<PageOne> {
           receiver.add(await Navigator.pushNamed(context, '/second'));
 
           setState(() {
+            //.map loop to pass the received list data to student list
             student = receiver
                 .map((item) => {
                       'name': item[0]['name'],
