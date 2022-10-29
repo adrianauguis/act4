@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 class PageOne extends StatefulWidget {
-  PageOne({super.key});
+  const PageOne({super.key});
 
   @override
   State<PageOne> createState() => _PageOneState();
 }
 
-int i = 0, x = 1;
-List l1 = [];
-List student = [];
-
 class _PageOneState extends State<PageOne> {
+  List receiver = [];
+  List student = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +27,7 @@ class _PageOneState extends State<PageOne> {
                 onPressed: () {
                   setState(() {
                     student.removeAt(index);
+                    receiver.removeAt(index);
                   });
                 },
                 icon: const Icon(Icons.delete, color: Colors.red),
@@ -52,15 +52,10 @@ class _PageOneState extends State<PageOne> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          l1.add(await Navigator.pushNamed(context, '/second'));
+          receiver.add(await Navigator.pushNamed(context, '/second'));
+
           setState(() {
-            if (x == 1) {
-              i = 0;
-            }
-            if (x > 1) {
-              i++;
-            }
-            student = l1
+            student = receiver
                 .map((item) => {
                       'name': item[0]['name'],
                       'email': item[0]['email'],
@@ -72,7 +67,6 @@ class _PageOneState extends State<PageOne> {
                       'fb': item[0]['fb']
                     })
                 .toList();
-            x++;
           });
         },
         child: const Icon(Icons.add),

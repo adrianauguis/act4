@@ -208,24 +208,6 @@ class _PageTwoState extends State<PageTwo> {
               ),
             ],
           )),
-      floatingActionButton: FloatingActionButton(
-        // When the user presses the button, show an alert dialog containing
-        // the text that the user has entered into the text field.
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                // Retrieve the text that the user has entered by using the
-                // TextEditingController.
-                content: Text(nameEditingController.text),
-              );
-            },
-          );
-        },
-        tooltip: 'Show me the value!',
-        child: const Icon(Icons.text_fields),
-      ),
     );
   }
 }

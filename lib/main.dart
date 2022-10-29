@@ -12,7 +12,7 @@ void main() {
     ),
     initialRoute: '/',
     routes: {
-      '/':(context) => PageOne(),
+      '/':(context) => const PageOne(),
       '/second': (context) => PageTwo()
     },
   ));
